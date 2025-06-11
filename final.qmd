@@ -14,8 +14,18 @@ editor: visual
 
 ## Problem 1. Research Writing 
 
-### a. 
+### a. Transparent statistical methods 
 
-In part 1, they used a correlation test. There is not enough information to determine the specific correlation test but both variables are continuous which leaves us with two options Pearson's correlation test (assumes normality and linearity) or Spearman’s (does not assume normality or linearity).
+In part 1, they used a correlation test. They most likely used Pearson correlation test since both variables are continuous and they are assessing the linear relationship between distance from headwater and annual total nitrogen load. But there is not enough information to confidently determine if they used Pearson or Spearman correlation test.
 
-In part 2, they used ANOVA. They compared the average in nitrogen load (mean) with 5 variables. ANOVA test is used to test for statistical significant differences between the means of 2 or more groups.
+In part 2, they used one-way ANOVA. They compared the average in nitrogen load (mean) with 5 variables. ANOVA test is used to test for statistical significant differences between the means of 2 or more groups.
+
+### b. More information needed 
+
+-   Summary statistics
+
+    adding summary statistics like the mean, standard deviation and sample size can helps us understand the magnitud and variability of the nitrogen loads for each source. For example the mean would gives us information about how much each source contributes.
+
+-   Performing Tukey HSD
+
+    This test would help us identify which nitrogen sources is significantly different when we compare them since ANOVA tells us there is significant difference but not from which sources, this test would helps us identify that.
