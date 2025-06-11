@@ -1,0 +1,21 @@
+---
+title: "final"
+format: html
+editor: visual
+---
+
+\[Github Repo\]()
+
+## set up 
+
+```{r}
+#load packages and reading data
+```
+
+## Problem 1. Research Writing 
+
+### a. 
+
+In part 1, they used a correlation test. There is not enough information to determine the specific correlation test but both variables are continuous which leaves us with two options Pearson's correlation test (assumes normality and linearity) or Spearman’s (does not assume normality or linearity).
+
+In part 2, they used ANOVA. They compared the average in nitrogen load (mean) with 5 variables. ANOVA test is used to test for statistical significant differences between the means of 2 or more groups.
