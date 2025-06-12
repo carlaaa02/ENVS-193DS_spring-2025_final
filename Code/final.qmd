@@ -9,6 +9,9 @@ editor: visual
 ## set up
 
 ```{r}
+#| message: true
+#| warning: true
+
 #load packages and reading data
 library(tidyverse)
 library(janitor)
@@ -241,7 +244,7 @@ ggplot() +
 
 The figure shows model 2 predicted probabilities of nest box occupancy for Swift Parrots across two seasons (2016 and 2019), with 95% confidence intervals, based on distance to the forest edge. Points represent individual observations of box occupancy (1 = occupied, 0 = unoccupied). The model shows decreasing occupancy likelihood with increasing distance, with higher probabilities in 2016.
 
-Data from Stojanovic et al. (2021), Dryad Digital Repository, <https://doi.org/10.5061/dryad.83bk3j9sb>.
+Dataset from Stojanovic, D., Owens, G., Young, C.M., Alves, F. and Heinsohn, R. 2021.  “Do nest boxes breed the target species or its competitors? A case study of a critically endangered bird.” *Restoration Ecology*. DOI: [10.1111/rec.13319](https://doi.org/10.1111/rec.13319)
 
 ### j. Calculate Model Predictions
 
