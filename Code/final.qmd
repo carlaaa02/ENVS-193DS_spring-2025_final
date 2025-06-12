@@ -9,8 +9,8 @@ editor: visual
 ## set up
 
 ```{r}
-#| message: true
-#| warning: true
+#| message: false
+#| warning: false
 
 #load packages and reading data
 library(tidyverse)
@@ -65,6 +65,8 @@ Average nitrogen load differed significantly among the five nitrogen sources, in
 ### a. cleaning and summarizing
 
 ```{r}
+#| message: false
+#| warning: false
 #creating new object for clean data
 sst_clean <- sst |> 
   mutate(date = ymd(date)) |> # convert data column into different data format 
@@ -90,6 +92,8 @@ str(sst_clean)
 ### b. Visualize the data
 
 ```{r}
+#| message: false
+#| warning: false
 # creating the plot
 ggplot(sst_clean, aes(x = month, y = mean_monthly_sst, group = factor(year), color = factor(year))) + 
   geom_line(size = 1) + # adding line geometry
@@ -142,11 +146,15 @@ The two “seasons” in the study refer to the years 2016 and 2019, when nest b
 ### e. Run the Models
 
 ```{r}
+#| message: false
+#| warning: false
 nest_boxes_clean <- nest_boxes |>
   clean_names() 
 ```
 
 ```{r}
+#| message: false
+#| warning: false
 # Model 1: Null model (intercept only)
 model1 <- glm(
   sp ~ 1,
@@ -179,6 +187,8 @@ model4 <- glm(
 ### f. Check the diagnostics
 
 ```{r}
+#| message: false
+#| warning: false
 par(mfrow = c(2,2))
 plot(simulateResiduals(model1))
 plot(simulateResiduals(model2))
@@ -189,6 +199,8 @@ plot(simulateResiduals(model4))
 ### g. Select the best model
 
 ```{r}
+#| message: false
+#| warning: false
 AICc(model1,
      model2,
      model3,
@@ -201,6 +213,8 @@ The best model as determined by Akaike’s Information Criterion (AICc) was the 
 ### h. Visualize the model predictors
 
 ```{r}
+#| message: false
+#| warning: false
 
 model2_predictions <- ggpredict(
   model2,
@@ -250,6 +264,8 @@ Dataset from Stojanovic, D., Owens, G., Young, C.M., Alves, F. and Heinsohn, R. 
 ### j. Calculate Model Predictions
 
 ```{r}
+#| message: false
+#| warning: false
 predicted_values <- ggpredict(
   model2, #model object
   terms = c("edge_distance [0,900]", "season")  #predictors
@@ -264,7 +280,7 @@ predicted_values
 
 The predicted probability of Swift Parrot nest box occupancy was highest at the forest edge (0 m), with occupancy decreasing significantly at 900 meters away. In 2016, the predicted probability at 0 m was 0.48 (95% CI: 0.33–0.64), compared to just 0.12 (CI: 0.06–0.24) at 900 m. In 2019, the probability dropped from 0.30 (CI: 0.18–0.44) at the edge to 0.06 (CI: 0.03–0.13) at 900 m. As shown in part h, the probability of occupancy decreases with distance from the forest edge in both seasons, with consistently lower values in 2019. This trend likely reflects ecological preferences of Swift Parrots, who may favor areas near forest edges due to better access to nesting resources, food, or shelter, and suggests that habitat fragmentation or edge effects may significantly influence their nesting behavior.
 
-## Problem 4. **Affective and exploratory visualizations**
+## Problem 4. Effective and exploratory visualizations
 
 ### a. Comparing Visualizations
 
