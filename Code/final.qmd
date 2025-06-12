@@ -4,7 +4,7 @@ format: html
 editor: visual
 ---
 
-\[Github Repo\]()
+\[Github Repo\](<https://github.com/carlaaa02/ENVS-193DS_spring-2025_final>)
 
 ## set up
 
@@ -21,12 +21,13 @@ library(ggplot2)
 library(DHARMa)
 library(MuMIn)
 library(ggeffects)
+library(here)
 
 #reading csv data file for problem 2
-sst <- read.csv("Data/SST_sb_channel.csv")
+sst <- read.csv (here("Data/SST_sb_channel.csv"))
 
 #reading csv data file for problem 3
-nest_boxes <- read_csv("Data/occdist.csv")
+nest_boxes <- read_csv (here("Data/occdist.csv"))
 
 ```
 
@@ -281,4 +282,4 @@ The predicted probability of Swift Parrot nest box occupancy was highest at the 
 
 -   What kinds of feedback did you get during week 9 in workshop or from the instructors? How did you implement or try those suggestions? If you tried and kept those suggestions, explain how and why; if not, explain why not.
 
--   Due to work reasons i did not attended workshop 9 I was not able to get any feedback on my effective visualization.
+    Due to work reasons i did not attended workshop 9 I was not able to get any feedback on my effective visualization.
