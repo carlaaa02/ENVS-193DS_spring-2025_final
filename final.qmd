@@ -10,6 +10,10 @@ editor: visual
 
 ```{r}
 #load packages and reading data
+library(tidyverse)
+library(janitor)
+library(lubridate)
+
 ```
 
 ## Problem 1. Research Writing 
@@ -29,3 +33,16 @@ In part 2, they used one-way ANOVA. They compared the average in nitrogen load (
 -   Performing Tukey HSD
 
     This test would help us identify which nitrogen sources is significantly different when we compare them since ANOVA tells us there is significant difference but not from which sources, this test would helps us identify that.
+
+### c. Suggestion for rewriting
+
+Part 1:
+
+We found a statistically significant positive relationship between distance from headwater and total nitrogen load, suggesting that nitrogen accumulates downstream, possibly due to agricultural and urban inputs.\
+(Pearson correlation test: r = \[correlation coefficient\], p = 0.03, α = 0.05)
+
+Part 2:
+
+Average nitrogen load differed significantly among the five nitrogen sources, indicating that some sources contribute more nitrogen than others.(One-way ANOVA: F = \[F statistic\], df = \[degrees of freedom\], p = 0.02, α = 0.05).
+
+## 
