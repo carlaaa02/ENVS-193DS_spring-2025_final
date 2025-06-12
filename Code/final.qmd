@@ -49,3 +49,28 @@ Part 2:
 Average nitrogen load differed significantly among the five nitrogen sources, indicating that some sources contribute more nitrogen than others.(One-way ANOVA: F = \[F statistic\], df = \[degrees of freedom\], p = 0.02, α = 0.05).
 
 ## Problem 2. Data visualization
+
+### a. cleaning and summarizing 
+
+```{r}
+#creating new object for clean data
+sst_clean <- sst |> 
+  mutate(date = ymd(date)) |> # convert data column into different data format 
+  mutate(
+    year = year(date), #extracting year and data
+    month = month(date, label = TRUE)  #use abbreviated month labels
+  ) |> 
+  #Filter for the years needed for the figure   (2018–2023)
+  filter(year >= 2018, year <= 2023) |> 
+  #Group by year and month
+  group_by(year, month) |> 
+  #Summarizing data by calculating the mean sst for each year-month
+  summarise(
+    mean_monthly_sst = mean(temp, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+#display 5 random rows from the cleaned dataset
+slice_sample(sst_clean, n = 5)
+str(sst_clean)
+```
