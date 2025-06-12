@@ -16,8 +16,11 @@ library(lubridate)
 library(dplyr)
 library(ggplot2)
 
-#reading csv data file 
+#reading csv data file for problem 2
 sst <- read.csv("Data/SST_sb_channel.csv")
+
+#reading csv data file for problem 3
+nest_boxes <- read_csv("Data/occdist.csv")
 
 ```
 
@@ -105,3 +108,9 @@ ggplot(sst_clean, aes(x = month, y = mean_monthly_sst, group = factor(year), col
   )
 
 ```
+
+## Problem 3. Data Analysis 
+
+### a. Response Variable 
+
+The 1s mean that the nest box was occupied by a bird while 0s mean that the nest box was not occupied by a bird.
