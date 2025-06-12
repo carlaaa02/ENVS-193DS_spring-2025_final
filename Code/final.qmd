@@ -13,6 +13,8 @@ editor: visual
 library(tidyverse)
 library(janitor)
 library(lubridate)
+library(dplyr)
+library(ggplot2)
 
 #reading csv data file 
 sst <- read.csv("Data/SST_sb_channel.csv")
@@ -73,4 +75,33 @@ sst_clean <- sst |>
 #display 5 random rows from the cleaned dataset
 slice_sample(sst_clean, n = 5)
 str(sst_clean)
+```
+
+### b. Visualize the data 
+
+```{r}
+# creating the plot
+ggplot(sst_clean, aes(x = month, y = mean_monthly_sst, group = factor(year), color = factor(year))) + 
+  geom_line(size = 1) + # adding line geometry
+  geom_point(size = 2) + # adding point geometry
+  scale_color_manual(
+    values = colorRampPalette(c("yellow", "red"))(6), #yellow to red color gradient
+    name = "Year"
+  ) +
+  labs(  
+    x = "Month", # x-label
+    y = "Mean monthly sea surface temperature (°C)" # y-label
+  ) +
+  theme_minimal(base_size = 14) + #clean base theme
+  theme(
+    panel.border = element_rect(color = "gray", fill = NA, size = 1), #adding panel border
+    panel.background = element_blank(), #blank background
+    legend.position = c(0.11, 0.8),   #adding legend inside the panel
+    legend.title = element_text(size = 12),
+    legend.text = element_text(size = 10),
+    panel.grid = element_blank(), # getting rid of grid lines
+    axis.ticks.length = unit(0.1, "cm"),  #adding tick marks outside
+    axis.ticks = element_line(color = "black") #black tick marks
+  )
+
 ```
