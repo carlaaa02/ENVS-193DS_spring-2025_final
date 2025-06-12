@@ -6,7 +6,7 @@ editor: visual
 
 \[Github Repo\]()
 
-## set up 
+## set up
 
 ```{r}
 #load packages and reading data
@@ -14,17 +14,20 @@ library(tidyverse)
 library(janitor)
 library(lubridate)
 
+#reading csv data file 
+sst <- read.csv("Data/SST_sb_channel.csv")
+
 ```
 
-## Problem 1. Research Writing 
+## Problem 1. Research Writing
 
-### a. Transparent statistical methods 
+### a. Transparent statistical methods
 
 In part 1, they used a correlation test. They most likely used Pearson correlation test since both variables are continuous and they are assessing the linear relationship between distance from headwater and annual total nitrogen load. But there is not enough information to confidently determine if they used Pearson or Spearman correlation test.
 
 In part 2, they used one-way ANOVA. They compared the average in nitrogen load (mean) with 5 variables. ANOVA test is used to test for statistical significant differences between the means of 2 or more groups.
 
-### b. More information needed 
+### b. More information needed
 
 -   Summary statistics
 
@@ -45,4 +48,4 @@ Part 2:
 
 Average nitrogen load differed significantly among the five nitrogen sources, indicating that some sources contribute more nitrogen than others.(One-way ANOVA: F = \[F statistic\], df = \[degrees of freedom\], p = 0.02, α = 0.05).
 
-## 
+## Problem 2. Data visualization
