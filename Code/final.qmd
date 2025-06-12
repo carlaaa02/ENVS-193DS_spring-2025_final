@@ -1,5 +1,7 @@
 ---
 title: "final"
+author: "Carla Quintanilla"
+date: "june 11, 2025"
 format: html
 editor: visual
 ---
